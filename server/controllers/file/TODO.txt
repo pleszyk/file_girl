@@ -1,0 +1,78 @@
+/*
+████████╗ ██████╗ ██████╗  ██████╗ 
+╚══██╔══╝██╔═══██╗██╔══██╗██╔═══██╗
+   ██║   ██║   ██║██║  ██║██║   ██║
+   ██║   ██║   ██║██║  ██║██║   ██║
+   ██║   ╚██████╔╝██████╔╝╚██████╔╝
+   ╚═╝    ╚═════╝ ╚═════╝  ╚═════╝ 
+                                   
+
+   MAIN
+   need to handle folders
+   create named folders with files
+   download folder zip it
+   add encryption
+   add filesharing
+
+
+   Make it so I gets3Session is only called every 14mintues or after it expires
+
+   Storage Cap/
+   Store filesize in database, done
+   query users files & add 
+   Store total in user? storage used
+
+   Add a way to upload folders
+   take the folder/Zip it & upload
+   when download itll just give the zip file
+   Problem w zipping wouldn’t be able to download individual files
+   OR 
+
+   Upload to s3 one by one
+   What about encryption ?
+   encrypt every file in the folder with one passphrase?
+   How do i zip them if theyre all encrypted?
+   have client side zipper tool?
+
+   initally make it so user selects a folder it will zip it then encrypt?
+
+   Solution1
+   Make it so encrypted folders are zipped before uploading
+   if not encrypted uploaded 1by1 to allow access to individual files
+
+   Solution2
+   could probably make it so each file in folder is encrypted with same passphrase
+   when downloading it decrypts each file & then zips it for download
+
+
+   front end
+   figure out how to add a folder
+   get filename/ file info of each file in the folder
+   put it into an object
+   send it to backend
+   getsignedurl for each file
+   match signedurl to files 
+   send it to front end
+   upload each file to their signedurl in parallel
+  
+   Each needs its own signedurl
+   When u download a folder ? It gets each signedurl & zips it
+
+   Encryption:
+   checkbox for encrypt file
+   when upload prompt user to enter a passphrase
+   encrypt with passphrase derived encryption key
+   when download prompt user to enter their passphrase from uploading
+   decrpyt with passphrase derived encryption key
+   
+   File Sharing?
+   add permissions to files?
+   add encryption flag to files, if encrypted prompt for a passphrase
+   if a user has permission to read the file it will showup on their list of files tagged with original owners username
+
+   allow users to share files between accounts, Can decrypt if they share passphrase 
+   ^ Initially, figure out a better solution for this later..
+
+   allow users to create a "dropbox" link where anyone with the link can upload to their account no encryption allowed
+   allow users to create a public download link for specific files
+*/
