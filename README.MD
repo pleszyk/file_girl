@@ -6,7 +6,7 @@
   <img src="./client/public/favicon.ico" alt="Description of image" width="64" height="64" />
 </div>
 
-![design](design.png)
+![design](Design.png)
 
 Brief overview
 --------------
